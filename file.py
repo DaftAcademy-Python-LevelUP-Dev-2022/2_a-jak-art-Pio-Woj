@@ -53,7 +53,7 @@ def format_output(*required_keys):
 
 def add_method_to_instance(klass):
     def wrapper(func):
-        def inner(self):
+        def inner(*args, **kwargs):
             return func()
         setattr(klass, func.__name__, inner)
         return func
